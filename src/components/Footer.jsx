@@ -108,14 +108,10 @@ const StyledFooterButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-//   color: #54a2f7;
+  color: #54a2f7;
 
   &:hover {
-    color: #000;
-    background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);
-    transition: 2s ease-in;
-    border: 2px solid transparent;
-    
+    background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);    
   }
 
   .icon {
