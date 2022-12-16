@@ -77,6 +77,7 @@ const StyledContact = styled.div`
     text-align: end;
     width: 80%;
     margin-bottom: 10px;
+    cursor: pointer;
   }
 `;
 

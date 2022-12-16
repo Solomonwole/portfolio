@@ -3,22 +3,26 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledLogo } from "./Styles/styles";
 import { AiOutlineClose } from "react-icons/ai";
-import { BsGithub } from "react-icons/bs";
 import { HashLink } from "react-router-hash-link";
+import Contact from "./Contact";
 
 
 const MobileMenu = ({ menu, closeMenu }) => {
-    const [contact, setContact] = useState(false);
+  const [contact, setContact] = useState(false);
 
   const handleContact = () => {
+
     setContact(!contact);
+    
   };
   useEffect(() => {
     const body = document.querySelector("body");
     body.style.overflow = menu ? "hidden" : "auto";
   }, [menu]);
 
-  if (!menu) return null;
+  if (!menu) {
+    return null;
+}
 
   return (
     <>
@@ -26,33 +30,28 @@ const MobileMenu = ({ menu, closeMenu }) => {
         <StyledMenuDrawer>
           <StyledHeading>
             <Link to="/">
-              {" "}
               <StyledLogo>SW.</StyledLogo>
             </Link>
             <AiOutlineClose className="icon" onClick={closeMenu} />
           </StyledHeading>
           <StyledMenuList>
-          <ul>
-            <li>
-              <HashLink to="/#project">Projects</HashLink>
-            </li>
-            <li>
-              <HashLink to="/#resume">Resume</HashLink>
-            </li>
-            <li onClick={handleContact} className='contact'>Contact</li>
-            <li>
-              <a
-                href="https://github.com/solomonwole"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub className="git" />
-              </a>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <HashLink to="/#project" onClick={closeMenu}>Projects</HashLink>
+              </li>
+              <li>
+                <HashLink to="/#resume" onClick={closeMenu}>Resume</HashLink>
+              </li>
+              <li onClick={handleContact} className="contact">
+                Contact
+              </li>
+            </ul>
+
+            
           </StyledMenuList>
         </StyledMenuDrawer>
       </StyledOverlay>
+      <Contact open={contact} close={() => setContact(false)} />
     </>
   );
 };
@@ -83,6 +82,7 @@ const StyledHeading = styled.div`
 
   .icon {
     font-size: 24px;
+    cursor: pointer;
   }
 `;
 const StyledMenuList = styled.div`
@@ -90,8 +90,6 @@ width: 100%;
 margin: 30px auto;
 text-align: center;
 
-
-}
 ul {
     list-style: none;
 
@@ -102,14 +100,17 @@ ul {
             background: #fff;
             color: #000;
         }
-        a{
-            background: transparent;
-            color: #fff;
-            &:hover{
-                color: #000;
-            }
+        
     }
-
+    a{
+        padding: 10px 40%;
+        background: transparent;
+        color: #fff;
+        &:hover{
+            color: #000;
+            background: #fff;
+        }
 }
-`
+
+`;
 export default MobileMenu;
