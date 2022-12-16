@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { StyledH2 } from "./Styles/styles";
 
 const Contact = ({ open, close }) => {
-    if(!open) return null;
-    
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
+  if (!open) return null;
+
   return (
     <>
       <StyledContain onClick={close}>
-        <StyledContact>Hello</StyledContact>
+        <StyledContact>
+          <StyledH2>Send A Message</StyledH2>
+        </StyledContact>
       </StyledContain>
     </>
   );
 };
 
-
 //Styling
 
 const StyledContain = styled.div`
-  z-index: 20;
+  z-index: 10;
   position: fixed;
   width: 100%;
   height: 100vh;

@@ -17,6 +17,8 @@ const HeaderNav = () => {
   const handleMenu = () => {
     setMenu(true);
   };
+
+  
   return (
     <>
       <StyledFlex>
@@ -32,7 +34,7 @@ const HeaderNav = () => {
             <li>
               <HashLink to="/#experience">Resume</HashLink>
             </li>
-            <li onClick={handleContact}>Contact</li>
+            <li onClick={handleContact} className='contact'>Contact</li>
             <li>
               <a
                 href="https://github.com/solomonwole"
@@ -70,6 +72,9 @@ const StyledMobile = styled.div`
 `;
 const StyledDesktop = styled.div`
   display: none;
+  .contact{
+    cursor: pointer;
+  }
 
   @media screen and (min-width: 641px){
     display: block;
