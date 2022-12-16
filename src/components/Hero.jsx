@@ -1,9 +1,17 @@
 import styled from "styled-components";
 import { StyledH1 } from "./Styles/styles";
 import { CgArrowLongRight } from "react-icons/cg";
+import { useState } from "react";
+import Contact from "./Contact";
+
+
 const Hero = () => {
-  const handleContact = () => {};
-  return (
+    const [contact, setContact] = useState(false);
+
+    const handleContact = () => {
+      setContact(!contact);
+    };
+  return (<>
     <StyledHero>
       <p>Hey, I'm</p>
       <StyledH1>Solomon Adewole</StyledH1>
@@ -15,9 +23,10 @@ const Hero = () => {
         for businesses.
       </StyledHeroText>
       <StyledTextButton onClick={handleContact}>
-        Say hi <CgArrowLongRight className="arrowone"/>
+        Say hi &nbsp; <CgArrowLongRight className="arrowone"/>
       </StyledTextButton>
     </StyledHero>
+    <Contact open={contact} close={() => setContact(false)} /></>
   );
 };
 
@@ -42,28 +51,24 @@ const StyledHeroText = styled.p`
 `;
 
 const StyledTextButton = styled.button`
-  border: none;
   font-size: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80px;
   margin-top: 30px;
   cursor: pointer;
 
+  border: 1px solid #54a2f7;
+  border-radius: 4px;
+  width: 200px;
+  height: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &:hover{
-    background: linear-gradient(
-        89.81deg,
-        #9845e8 -1.72%,
-        #33d2ff 50.08%,
-        #dd5789 99.78%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
+    background: linear-gradient(90deg, #54a2f7 15%, #8f50e9); 
   }
-  
+  .arrowone{
+    background: transparent;
+  }
    
 `;
 

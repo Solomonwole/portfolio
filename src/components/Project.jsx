@@ -1,4 +1,4 @@
-import Projects from "./ProjectList";
+import Projects from "../template/ProjectList";
 import { StyledH3 } from "./Styles/styles";
 import styled from "styled-components";
 import data from "../data/data";

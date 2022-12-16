@@ -99,7 +99,7 @@ const StyledFooter = styled.div`
   }
 `;
 
-const StyledFooterButton = styled.div`
+export const StyledFooterButton = styled.div`
   cursor: pointer;
   border: 1px solid #54a2f7;
   border-radius: 4px;
@@ -108,7 +108,7 @@ const StyledFooterButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #54a2f7;
+  color: #fff;
 
   &:hover {
     background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);    
@@ -116,7 +116,7 @@ const StyledFooterButton = styled.div`
 
   .icon {
     background: transparent;
-    color: #54a2f7;
+    color: #fff;
   }
 `;
 

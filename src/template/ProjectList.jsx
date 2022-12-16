@@ -6,7 +6,7 @@ import {
   StyledColorText,
   StyledProjectText,
   StyledText,
-} from "./Styles/styles";
+} from "../components/Styles/styles";
 
 const Projects = ({ projects }) => {
   return (

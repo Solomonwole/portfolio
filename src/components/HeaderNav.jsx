@@ -6,6 +6,7 @@ import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import Contact from "./Contact";
+import MobileMenu from "./Menu";
 
 const HeaderNav = () => {
   const [menu, setMenu] = useState(false);
@@ -32,7 +33,7 @@ const HeaderNav = () => {
               <HashLink to="/#project">Projects</HashLink>
             </li>
             <li>
-              <HashLink to="/#experience">Resume</HashLink>
+              <HashLink to="/#resume">Resume</HashLink>
             </li>
             <li onClick={handleContact} className='contact'>Contact</li>
             <li>
@@ -47,7 +48,7 @@ const HeaderNav = () => {
           </ul>
         </StyledDesktop>
       </StyledFlex>
-      {menu}
+      <MobileMenu menu={menu} closeMenu={() => setMenu(false)} />
       <Contact open={contact} close={() => setContact(false)} />
     </>
   );

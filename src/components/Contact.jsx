@@ -1,20 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { StyledH2 } from "./Styles/styles";
+import { AiOutlineCloseCircle, AiOutlineMail } from "react-icons/ai";
+import "./Styles/loading.css";
 
 const Contact = ({ open, close }) => {
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const body = document.querySelector("body");
     body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
 
-  if (!open) return null;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+  };
 
+  //   ---------------------
+
+  if (!open) return null;
   return (
     <>
-      <StyledContain onClick={close}>
+      <StyledContain>
         <StyledContact>
+          <div className="closebtn" onClick={close}>
+            <AiOutlineCloseCircle />
+          </div>
           <StyledH2>Send A Message</StyledH2>
+          <StyledForm onClick={handleSubmit}>
+            <input type="text" placeholder="Full name" required />
+            <input type="email" placeholder="Email address" required />
+            <textarea placeholder="Enter message" />
+            {!loading ? <StyledFButton>
+              Send message &nbsp; <AiOutlineMail className="icon" />
+            </StyledFButton> : <StyledFButton><div className="loader"></div></StyledFButton> }
+          </StyledForm>
         </StyledContact>
       </StyledContain>
     </>
@@ -49,15 +70,71 @@ const StyledContact = styled.div`
   border-radius: 8px;
   max-width: 600px;
   min-width: 300px;
-  width: 80%;
+  width: 90%;
 
-  img {
-    width: 30%;
-    margin-bottom: 15px;
+  .closebtn {
+    font-size: 24px;
+    text-align: end;
+    width: 80%;
+    margin-bottom: 10px;
   }
-  p {
-    margin-top: 15px;
-    margin-bottom: -3px;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #54a2f7;
+    border-radius: 4px;
+    background: rgb(217, 217, 217, 0.1);
+
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    margin-bottom: 15px;
+    height: 132px;
+    padding: 10px;
+    border: 1px solid #54a2f7;
+    border-radius: 4px;
+    background: rgb(217, 217, 217, 0.1);
+
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+const StyledFButton = styled.div`
+  cursor: pointer;
+  border: 1px solid #54a2f7;
+  background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);
+  border-radius: 4px;
+  width: 100%;
+  height: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  &:hover {
+    background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);
+  }
+
+  .icon {
+    background: transparent;
+    color: #fff;
+  }
+
+  .loader{
+    font-size: 4px;
   }
 `;
 export default Contact;
