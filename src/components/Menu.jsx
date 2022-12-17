@@ -5,15 +5,14 @@ import { StyledLogo } from "./Styles/styles";
 import { AiOutlineClose } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
 import Contact from "./Contact";
-
+import "./Styles/menu.css";
+import "./Styles/new.css";
 
 const MobileMenu = ({ menu, closeMenu }) => {
   const [contact, setContact] = useState(false);
 
   const handleContact = () => {
-
     setContact(!contact);
-    
   };
   useEffect(() => {
     const body = document.querySelector("body");
@@ -22,12 +21,12 @@ const MobileMenu = ({ menu, closeMenu }) => {
 
   if (!menu) {
     return null;
-}
+  }
 
   return (
     <>
       <StyledOverlay>
-        <StyledMenuDrawer>
+        <StyledMenuDrawer className={menu ? "slideInLeft" : "slideOutLeft"}>
           <StyledHeading>
             <Link to="/">
               <StyledLogo>SW.</StyledLogo>
@@ -37,17 +36,21 @@ const MobileMenu = ({ menu, closeMenu }) => {
           <StyledMenuList>
             <ul>
               <li>
-                <HashLink to="/#project" onClick={closeMenu}>Projects</HashLink>
+                <HashLink to="/#project" onClick={closeMenu}>
+                  Projects
+                </HashLink>
               </li>
               <li>
-                <HashLink to="/#resume" onClick={closeMenu}>Resume</HashLink>
+                <HashLink to="/#resume" onClick={closeMenu}>
+                  Resume
+                </HashLink>
               </li>
-              <li onClick={handleContact} className="contact">
-                Contact
+              <li>
+                <HashLink onClick={handleContact} className="contact">
+                  Contact
+                </HashLink>
               </li>
             </ul>
-
-            
           </StyledMenuList>
         </StyledMenuDrawer>
       </StyledOverlay>
@@ -83,6 +86,9 @@ const StyledHeading = styled.div`
   .icon {
     font-size: 24px;
     cursor: pointer;
+    &:hover{
+        color: #54a2f7;
+    }
   }
 `;
 const StyledMenuList = styled.div`
@@ -97,18 +103,17 @@ ul {
         margin: 20px 0;
         padding: 10px;
         &:hover{
-            background: #fff;
+            background: #54a2f7;
             color: #000;
         }
         
     }
     a{
-        padding: 10px 40%;
         background: transparent;
         color: #fff;
+        padding: 0 30%;
         &:hover{
-            color: #000;
-            background: #fff;
+            background: transparent;
         }
 }
 
