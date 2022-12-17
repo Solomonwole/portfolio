@@ -106,7 +106,15 @@ export const StyledTextSmall = styled.p``;
 
 // Button Styling
 
-export const StyledButton = styled.button``;
+export const StyledButton = styled.button`
+border: 1px solid #54a2f7;
+border-radius: 4px;
+padding: 10px 30px;
+&:hover{
+    background: linear-gradient(90deg, #54a2f7 15%, #8f50e9);
+}
+`;
+
 
 // Hr Styling
 export const Styledhr = styled.hr`
