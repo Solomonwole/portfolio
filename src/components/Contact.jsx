@@ -19,6 +19,7 @@ const Contact = ({ open, close }) => {
   const [triedToSubmit, setTriedToSubmit] = useState(false);
   const [valid, setValid] = useState(null);
   const [sent, setSent] = useState(false);
+  const [sentError, setSentError] = useState(false);
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -61,7 +62,8 @@ const Contact = ({ open, close }) => {
               }
             );
         } catch (error) {
-          
+          setSentError(true);
+          setLoading(false);
         }
         // End emailJs
       } else {
@@ -136,9 +138,14 @@ const Contact = ({ open, close }) => {
                   </StyledFButton>
                 )}
               </StyledForm>
+              {sentError ? (
+                <ErrorMessage error="An error occurred, please try again. " />
+              ) : (
+                ""
+              )}
             </>
           ) : (
-            <EmailSent close={close}/>
+            <EmailSent close={close} />
           )}
         </StyledContact>
       </StyledContain>
