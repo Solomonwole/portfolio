@@ -17,7 +17,7 @@ const ScrollUp = () => {
 // Styling
 
 const StyledScroll = styled.div`
-//   background: transparent;
+  background: #6091F4;
   border-radius: 20%;
   padding: 10px;
 
@@ -27,7 +27,7 @@ const StyledScroll = styled.div`
 
   .icon {
     background: transparent;
-    color: #111111;
+    color: #fff;
     margin: 0;
     padding: 0;
     border-radius: 50%;
