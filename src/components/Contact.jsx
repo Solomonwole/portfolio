@@ -28,11 +28,11 @@ const Contact = ({ open, close }) => {
             <AiOutlineCloseCircle />
           </div>
           <StyledH2>Send A Message</StyledH2>
-          <StyledForm onClick={handleSubmit}>
+          <StyledForm action="submit" onClick={handleSubmit}>
             <input type="text" placeholder="Full name" required />
             <input type="email" placeholder="Email address" required />
             <textarea placeholder="Enter message" />
-            {!loading ? <StyledFButton>
+            {!loading ? <StyledFButton typeof="submit">
               Send message &nbsp; <AiOutlineMail className="icon" />
             </StyledFButton> : <StyledFButton><div className="loader"></div></StyledFButton> }
           </StyledForm>
@@ -90,7 +90,7 @@ const StyledForm = styled.form`
 
   input {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px 10px;
     border: 1px solid #54a2f7;
     border-radius: 4px;
     background: rgb(217, 217, 217, 0.1);

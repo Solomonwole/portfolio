@@ -1,14 +1,13 @@
 import { BsArrowUp } from "react-icons/bs";
 import styled from "styled-components";
 const ScrollUp = () => {
-
   const HandleScroll = () => {
     window.scrollTo(0, 0);
   };
   return (
     <>
-      <StyledScroll>
-        <BsArrowUp className="icon" onClick={HandleScroll} />
+      <StyledScroll onClick={HandleScroll}>
+        <BsArrowUp className="icon" />
       </StyledScroll>
     </>
   );
@@ -17,9 +16,10 @@ const ScrollUp = () => {
 // Styling
 
 const StyledScroll = styled.div`
-  background: #6091F4;
+  background: #6091f4;
   border-radius: 20%;
   padding: 10px;
+  cursor: pointer;
 
   position: fixed;
   top: 88%;

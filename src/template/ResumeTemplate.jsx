@@ -14,10 +14,8 @@ const ResumeTemplate = ({ resumes }) => {
             <StyledColorText>{resume.company}</StyledColorText>
             <StyledList>
               <li>{resume.desc}</li>
-              <li>
-                - Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint.
-              </li>
+              <li>{resume.desc2}</li>
+              
             </StyledList>
           </StyledMargin>
         );
@@ -49,7 +47,7 @@ const StyledList = styled.ul`
     list-style: none;
     color: #c4c4c4;
     font-weight: 300;
-    line-height: 24px;
+    line-height: 30px;
     margin-bottom: 15px;
   }
 `;
