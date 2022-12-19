@@ -5,6 +5,7 @@ import ResumeTemplate from "../template/ResumeTemplate";
 import resume from "../data/ResumeData";
 import { useState } from "react";
 import { StyledFooterButton } from "./Footer";
+import Resume from '../assets/Solomon_Portfolio.pdf'
 
 const Experience = () => {
   const [resumes] = useState(resume);
@@ -16,7 +17,7 @@ const Experience = () => {
           <ResumeTemplate resumes={resumes} />
         </div>
         
-       <a href="/public/Solomon_Portfolio.pdf" target="_blank"> <StyledFooterButton>
+       <a href={Resume} download="Resume"> <StyledFooterButton>
             Donwload Resume &nbsp; <AiOutlineDownload className="icon"/>
         </StyledFooterButton></a>
       </StyledExp>
