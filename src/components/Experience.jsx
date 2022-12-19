@@ -16,7 +16,7 @@ const Experience = () => {
           <ResumeTemplate resumes={resumes} />
         </div>
         
-       <a href="/src/assets/Solomon Portfolio.pdf" download> <StyledFooterButton>
+       <a href="/public/Solomon_Portfolio.pdf" download> <StyledFooterButton>
             Donwload Resume &nbsp; <AiOutlineDownload className="icon"/>
         </StyledFooterButton></a>
       </StyledExp>
