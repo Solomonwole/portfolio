@@ -14,7 +14,7 @@ const HomePage = () => {
       <Experience />
       <Styledhr id="project" />
       <Project />
-      <Styledhr />
+      <Styledhr /> 
     </>
   );
 };

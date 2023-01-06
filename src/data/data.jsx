@@ -17,7 +17,7 @@ const data = [
     text: "Repute is a reputation management company. Founded by Mark Essien, CEO Hotels.ng. I worked on this project during my internship at HNG9.",
     github:
       "https://github.com/workshopapps/reputationmanagement.web/pulls?q=is%3Apr+author%3A%40me+is%3Aclosed",
-    link: "https://repute.hng.tech/",
+    link: "https://repute.legal/",
     tags: "React - Styled Components - Tailwind",
   },
   {
