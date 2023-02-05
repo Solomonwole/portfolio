@@ -1,8 +1,17 @@
 import stanrute from "../assets/stanrute.webp";
 import repute from "../assets/repute.webp";
+import boredomideas from "../assets/boredomideas.webp";
 import metabnb from "../assets/metabnb.webp";
 
 const data = [
+  {
+    image: boredomideas,
+    title: "Boredom Ideas",
+    text: "",
+    github: "https://github.com/solomonwole",
+    link: "https://www.boredomideas.vercel.app/",
+    tags: "React - Styled Components",
+  },
   {
     image: stanrute,
     title: "stanrute",

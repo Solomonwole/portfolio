@@ -85,6 +85,7 @@ const Contact = ({ open, close }) => {
                 <AiOutlineCloseCircle />
               </div>
               <StyledH2>Send A Message</StyledH2>
+
               <StyledForm ref={form} onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -96,10 +97,8 @@ const Contact = ({ open, close }) => {
                   checked
                   required
                 />
-                {!name && triedToSubmit ? (
+                {!name && triedToSubmit && (
                   <ErrorMessage error="Name field required" />
-                ) : (
-                  ""
                 )}
                 <input
                   type="email"
